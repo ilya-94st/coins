@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="bitcoinFragmentLoad">
+        <item name="android:layout_marginTop">12dp</item>
+        <item name="android:fontFamily">@font/almendra_sc</item>
+        <item name="android:textColor">@color/gold</item>
+        <item name="android:textSize">32sp</item>
+    </style>
+
+    <style name="text4dp">
+        <item name="android:layout_marginStart">8dp</item>
+        <item name="android:layout_marginLeft">8dp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="imageRecycler">
+        <item name="android:layout_marginStart">8dp</item>
+        <item name="android:layout_marginLeft">8dp</item>
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:layout_marginBottom">16dp</item>
+    </style>
+
+    <style name="count">
+        <item name="android:layout_marginTop">4dp</item>
+        <item name="android:layout_marginEnd">8dp</item>
+        <item name="android:layout_marginRight">8dp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="textDays">
+        <item name="android:layout_marginTop">4dp</item>
+        <item name="android:layout_marginBottom">16dp</item>
+    </style>
+
+    <style name="hour">
+        <item name="android:layout_marginStart">8dp</item>
+        <item name="android:layout_marginLeft">8dp</item>
+        <item name="android:layout_marginTop">16dp</item>
+    </style>
+
+    <style name="buttonLogin">
+        <item name="android:layout_marginTop">@dimen/s</item>
+        <item name="android:layout_weight">0.5</item>
+        <item name="backgroundTint">@color/purple3</item>
+        <item name="cornerRadius">20dp</item>
+    </style>
+</resources>

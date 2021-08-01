@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "420118535330",
+    "project_id": "coinmarketstaselovich",
+    "storage_bucket": "coinmarketstaselovich.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:420118535330:android:ec38c3d661d41dc0f80bfb",
+        "android_client_info": {
+          "package_name": "com.example.staselovich_p4"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "420118535330-9bie5ntth9divubaajbchlq9u12plpbg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.staselovich_p4",
+            "certificate_hash": "ce1dbdb1cfb7b49af12a51c13760d433b5798466"
+          }
+        },
+        {
+          "client_id": "420118535330-hfo2l5qmm5mqjev2tfcsamgbp2q46j9q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBSUDJ1v9yldPPQnrVbr2uR7W4R_hZtMGo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "420118535330-hfo2l5qmm5mqjev2tfcsamgbp2q46j9q.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
