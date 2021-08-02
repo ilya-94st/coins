@@ -141,6 +141,10 @@ dependencies {
     implementation platform('com.google.firebase:firebase-bom:28.3.0')
     implementation 'com.google.firebase:firebase-analytics-ktx'
 
+
+    implementation group: 'com.google.api-client', name: 'google-api-client-android', version: '1.30.9'
+    implementation 'com.google.apis:google-api-services-gmail:v1-rev20200203-1.30.9'
+
     //Picasso
     implementation 'com.squareup.picasso:picasso:2.71828'
 

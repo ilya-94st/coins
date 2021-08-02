@@ -20,7 +20,16 @@
         android:id="@+id/informationFragment"
         android:name="com.example.staselovich_p4.ui.information.InformationFragment"
         android:label="fragment_information"
-        tools:layout="@layout/fragment_information" />
+        tools:layout="@layout/fragment_information" >
+        <action
+            android:id="@+id/action_informationFragment_to_registrationFragment"
+            app:destination="@id/registrationFragment"
+            app:popUpTo="@id/informationFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_informationFragment_to_converterFragment2"
+            app:destination="@id/converterFragment" />
+    </fragment>
     <fragment
         android:id="@+id/registrationFragment"
         android:name="com.example.staselovich_p4.ui.registration.RegistrationFragment"
@@ -29,5 +38,36 @@
         <action
             android:id="@+id/action_registrationFragment_to_informationFragment"
             app:destination="@id/informationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/converterFragment"
+        android:name="com.example.staselovich_p4.ui.converter.ConverterFragment"
+        android:label="fragment_converter"
+        tools:layout="@layout/fragment_converter" >
+        <action
+            android:id="@+id/action_converterFragment_to_informationFragment"
+            app:destination="@id/informationFragment"
+            app:popUpTo="@id/converterFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_converterFragment_to_arrayCoinsFragment"
+            app:destination="@id/arrayCoinsFragment">
+            <argument
+                android:name="first"
+                app:argType="boolean" />
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/arrayCoinsFragment"
+        android:name="com.example.staselovich_p4.ui.array_coins.ArrayCoinsFragment"
+        android:label="fragment_array_coins"
+        tools:layout="@layout/fragment_array_coins" >
+        <action
+            android:id="@+id/action_arrayCoinsFragment_to_converterFragment"
+            app:destination="@id/converterFragment">
+        </action>
+        <argument
+            android:name="first"
+            app:argType="boolean" />
     </fragment>
 </navigation>

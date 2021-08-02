@@ -34,6 +34,7 @@
             android:id="@+id/bitcoinImage"
             android:layout_width="60dp"
             android:layout_height="60dp"
+            app:loadImage="@{bitcoin.id}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -73,6 +74,7 @@
 
         <TextView
             android:id="@+id/count"
+            app:textRetrodaction2="@{bitcoin.quote.USD.price}"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"
@@ -93,7 +95,7 @@
             android:id="@+id/textView7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="7d:"
+            app:textRetrodaction="@{bitcoin.quote.USD.percent_change_7d}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/count"
             app:layout_constraintTop_toBottomOf="@+id/count"
@@ -104,16 +106,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="24:"
+            app:textRetrodaction="@{bitcoin.quote.USD.percent_change_24h}"
             app:layout_constraintStart_toStartOf="@+id/textBitcoin"
             app:layout_constraintTop_toBottomOf="@+id/textBitcoin" />
 
         <TextView
             android:id="@+id/textHour"
             style="@style/hour"
+            android:text="@{String.valueOf(bitcoin.quote.USD.percent_change_1h)}"
             android:layout_width="12dp"
             android:layout_height="17dp"
-            android:text="1h"
             app:layout_constraintStart_toEndOf="@+id/bitcoinImage"
             app:layout_constraintTop_toBottomOf="@+id/BTC" />
     </androidx.constraintlayout.widget.ConstraintLayout>

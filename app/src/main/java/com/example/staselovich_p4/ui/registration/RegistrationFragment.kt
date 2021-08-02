@@ -3,12 +3,10 @@ package com.example.staselovich_p4.ui.registration
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
-import android.graphics.Color
-import android.graphics.LinearGradient
-import android.graphics.Shader
 import android.os.Bundle
 import android.view.View
 import android.view.animation.AnimationUtils
+import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
@@ -17,8 +15,8 @@ import com.example.staselovich_p4.base.BaseFragment
 import com.example.staselovich_p4.databinding.FragmentRegistrationBinding
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
-import com.google.android.gms.common.api.ApiException
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.GoogleAuthProvider
 import kotlinx.coroutines.*
 
 const val RC_SIGN_IN = 0
@@ -29,13 +27,15 @@ class RegistrationFragment : BaseFragment<FragmentRegistrationBinding>(){
     lateinit var shared: SharedPreferences
     var isremembered: Boolean = false
 
-
     override fun getBinding() = R.layout.fragment_registration
     @DelicateCoroutinesApi
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         auth = FirebaseAuth.getInstance()
-        mGoogleSignInClient = viewModel.createRequest(getString(R.string.default_web_client_id), requireActivity())
+        mGoogleSignInClient = GoogleSignIn.getClient(
+            requireActivity(),
+            viewModel.createRequest(getString(R.string.default_web_client_id))
+        )
         animation()
         shared = requireContext().getSharedPreferences("sharedPrefs", Context.MODE_PRIVATE)
         binding.signInButton.setOnClickListener {
@@ -76,15 +76,28 @@ class RegistrationFragment : BaseFragment<FragmentRegistrationBinding>(){
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        if (requestCode == RC_SIGN_IN) {
 
+        if (requestCode == RC_SIGN_IN) {
             val task = GoogleSignIn.getSignedInAccountFromIntent(data)
-            try {
-                val account = task.getResult(ApiException::class.java)!!
-                viewModel.firebaseAuthWithGoogle(account.idToken!!, auth)
-            } catch (e: ApiException) {
-                println("/////////////////$e")
-            }
+            viewModel.setUserToken(task)
+            firebaseAuthWithGoogle(viewModel.getUserToken())
+        }
+    }
+
+    private fun firebaseAuthWithGoogle(idToken: String) {
+        if(idToken.isEmpty()){
+            snackBar("You are not Authorization")
+        }else {
+            val credential = GoogleAuthProvider.getCredential(idToken, null)
+            auth.signInWithCredential(credential)
+                .addOnCompleteListener(requireActivity()) { task ->
+                    if (task.isSuccessful) {
+                        snackBar("You Authorization")
+                        Toast.makeText(context,"You Authorization", Toast.LENGTH_SHORT).show()
+                    } else {
+                        snackBar("You are not Authorization")
+                    }
+                }
         }
     }
 }
