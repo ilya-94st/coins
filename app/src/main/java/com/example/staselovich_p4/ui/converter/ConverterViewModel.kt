@@ -1,16 +1,8 @@
 package com.example.staselovich_p4.ui.converter
 
-import android.util.Log
 import androidx.databinding.Bindable
-import androidx.databinding.Observable
-import androidx.databinding.ObservableDouble
 import androidx.databinding.library.baseAdapters.BR
 import androidx.hilt.lifecycle.ViewModelInject
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.switchMap
-import androidx.lifecycle.viewModelScope
-import androidx.paging.cachedIn
 import com.example.staselovich_p4.base.BaseVM
 import com.example.staselovich_p4.model.CoinModel
 import com.example.staselovich_p4.model.CoinRepository
@@ -18,20 +10,20 @@ import com.example.staselovich_p4.model.CoinRepository
 class ConverterViewModel @ViewModelInject constructor(val repository: CoinRepository) :
     BaseVM() {
 
-    init {
-        Log.w("asd", "init")
+
+
+
+
+fun convert(price1: Double,coint1: Double, price2:Double): String{
+    val result = (price1 * coint1) / (price2*1)
+    return (Math.round(result * 100.0) / 100.0).toString()
+}
+    fun countDollors(prise: Double, count: Double): String {
+        val result = prise * count
+        return (Math.round(result * 100.0) / 100.0).toString()
     }
 
-    val fromCount = ObservableDouble(0.0)
-    val toCount = ObservableDouble(0.0)
 
-    init {
-        /*fromCount.addOnPropertyChangedCallback(object: Observable.OnPropertyChangedCallback() {
-            override fun onPropertyChanged(sender: Observable?, propertyId: Int) {
-
-            }
-        })*/
-    }
 
     @Bindable
     var fromCurrency: CoinModel? = null

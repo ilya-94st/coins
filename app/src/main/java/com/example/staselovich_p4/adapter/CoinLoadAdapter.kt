@@ -24,11 +24,9 @@ class CoinLoadAdapter(val retry:()-> Unit): LoadStateAdapter<CoinLoadAdapter.Loa
             }
         }
     }
-
     override fun onBindViewHolder(holder: LoadStateViewHolder, loadState: LoadState) {
         holder.bind(loadState)
     }
-
     override fun onCreateViewHolder(parent: ViewGroup, loadState: LoadState): LoadStateViewHolder {
         val binding = CoinLoadBinding.inflate(LayoutInflater.from(parent.context),parent,false)
         return LoadStateViewHolder(binding)

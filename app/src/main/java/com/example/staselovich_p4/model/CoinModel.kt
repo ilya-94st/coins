@@ -5,10 +5,10 @@ import kotlinx.android.parcel.Parcelize
 
 @Parcelize
 data class CoinModel(
-    val id: Int,
+    val id: Int?,
     val name: String,
     val symbol: String,
-    val quote: Quote,
+    val quote: Quote?,
 ) : Parcelable {
 
     @Parcelize
@@ -18,7 +18,7 @@ data class CoinModel(
 
         @Parcelize
         data class CoinToUsd(
-            val price: Double,
+            val price: Double?,
             val percent_change_1h : Double,
             val percent_change_24h: Double,
             val percent_change_7d: Double,

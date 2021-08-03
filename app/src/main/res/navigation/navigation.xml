@@ -64,8 +64,9 @@
         tools:layout="@layout/fragment_array_coins" >
         <action
             android:id="@+id/action_arrayCoinsFragment_to_converterFragment"
-            app:destination="@id/converterFragment">
-        </action>
+            app:destination="@id/converterFragment"
+            app:popUpTo="@id/arrayCoinsFragment"
+            app:popUpToInclusive="true"></action>
         <argument
             android:name="first"
             app:argType="boolean" />

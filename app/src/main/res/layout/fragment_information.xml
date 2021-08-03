@@ -23,7 +23,7 @@
             android:background="@drawable/cheked_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="@dimen/l"
             app:srcCompat="@drawable/ic_baseline_exit_to_app_24"
             tools:ignore="VectorDrawableCompat" />
 
@@ -31,13 +31,9 @@
             android:id="@+id/buttonConvert"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity ="end"
-            android:layout_marginEnd="@dimen/l"
-            android:layout_marginTop="16dp"
-            android:background="@drawable/cheked_button"
             app:srcCompat="@drawable/ic_baseline_dehaze_24"
             tools:ignore="VectorDrawableCompat"
-            android:layout_marginRight="@dimen/l" />
+            style="@style/buttonConvertFragmentInformation" />
 
     </androidx.appcompat.widget.Toolbar>
 
@@ -78,7 +74,7 @@
             android:id="@+id/text_view_error"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Results could not be loaded"
+            android:text="@string/can_not_load_result"
             app:layout_constraintBottom_toTopOf="@+id/button_retry"
             app:layout_constraintEnd_toEndOf="@+id/button_retry"
             app:layout_constraintStart_toStartOf="@+id/button_retry"
@@ -89,7 +85,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:text="Retry"
+            android:text="@string/retry"
             android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

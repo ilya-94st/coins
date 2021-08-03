@@ -16,30 +16,26 @@ class CoinAdapter(): PagingDataAdapter<CoinModel, CoinAdapter.PagingViewHolder>(
     PHOTO_COMPARATOR) {
     inner class PagingViewHolder(private val binding: RecyclerBitcoinInformationBinding): RecyclerView.ViewHolder(binding.root){
 
-
-
         @SuppressLint("SetTextI18n")
         fun bind(coin: CoinModel) {
             binding.bitcoin = coin
-            if(coin.quote.USD.percent_change_1h.toString()> 0.toString()){
+            if(coin.quote?.USD?.percent_change_1h.toString()> 0.toString()){
                 binding.textHour.setTextColor(Color.GREEN)
             } else {
                 binding.textHour.setTextColor(Color.RED)
             }
-            if (coin.quote.USD.percent_change_24h.toString()>0.toString()){
+            if (coin.quote?.USD?.percent_change_24h.toString()>0.toString()){
                 binding.text24.setTextColor(Color.GREEN)
             } else {
                 binding.text24.setTextColor(Color.RED)
             }
-            if (coin.quote.USD.percent_change_7d.toString()>0.toString()){
+            if (coin.quote?.USD?.percent_change_7d.toString()>0.toString()){
                 binding.textView7.setTextColor(Color.GREEN)
             } else {
                 binding.textView7.setTextColor(Color.RED)
             }
         }
     }
-
-
 
     companion object{
         private val PHOTO_COMPARATOR = object : DiffUtil.ItemCallback<CoinModel>(){

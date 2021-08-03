@@ -10,10 +10,10 @@
     android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="8dp">
+    android:padding="@dimen/s">
 
     <de.hdodenhof.circleimageview.CircleImageView android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_height="@dimen/dimens40"
         android:id="@+id/imgCoin"
         app:loadImage="@{bitcoin.id}"
         android:contentDescription="@string/app_name"/>
@@ -23,12 +23,7 @@
         android:text="@{bitcoin.symbol}"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
-        android:layout_marginLeft="20dp"
-        android:paddingStart="10dp"
-        android:paddingLeft="10dp"
-        android:textSize="20sp"
         tools:ignore="RtlSymmetry"
-        android:layout_marginStart="20dp" />
+        style="@style/text_array_coins" />
 </LinearLayout>
 </layout>

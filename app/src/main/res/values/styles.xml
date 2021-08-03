@@ -2,47 +2,105 @@
 <resources>
 
     <style name="bitcoinFragmentLoad">
-        <item name="android:layout_marginTop">12dp</item>
+        <item name="android:layout_marginTop">@dimen/m</item>
         <item name="android:fontFamily">@font/almendra_sc</item>
         <item name="android:textColor">@color/gold</item>
-        <item name="android:textSize">32sp</item>
+        <item name="android:textSize">@dimen/text32</item>
     </style>
 
     <style name="text4dp">
-        <item name="android:layout_marginStart">8dp</item>
-        <item name="android:layout_marginLeft">8dp</item>
+        <item name="android:layout_marginStart">@dimen/s</item>
+        <item name="android:layout_marginLeft">@dimen/s</item>
         <item name="android:textStyle">bold</item>
     </style>
 
     <style name="imageRecycler">
-        <item name="android:layout_marginStart">8dp</item>
-        <item name="android:layout_marginLeft">8dp</item>
-        <item name="android:layout_marginTop">8dp</item>
-        <item name="android:layout_marginBottom">16dp</item>
+        <item name="android:layout_marginStart">@dimen/s</item>
+        <item name="android:layout_marginLeft">@dimen/s</item>
+        <item name="android:layout_marginTop">@dimen/s</item>
+        <item name="android:layout_marginBottom">@dimen/l</item>
     </style>
 
     <style name="count">
-        <item name="android:layout_marginTop">4dp</item>
-        <item name="android:layout_marginEnd">8dp</item>
-        <item name="android:layout_marginRight">8dp</item>
+        <item name="android:layout_marginTop">@dimen/xs</item>
+        <item name="android:layout_marginEnd">@dimen/s</item>
+        <item name="android:layout_marginRight">@dimen/s</item>
         <item name="android:textStyle">bold</item>
     </style>
 
     <style name="textDays">
-        <item name="android:layout_marginTop">4dp</item>
-        <item name="android:layout_marginBottom">16dp</item>
+        <item name="android:layout_marginTop">@dimen/xs</item>
+        <item name="android:layout_marginBottom">@dimen/l</item>
     </style>
 
     <style name="hour">
-        <item name="android:layout_marginStart">8dp</item>
-        <item name="android:layout_marginLeft">8dp</item>
-        <item name="android:layout_marginTop">16dp</item>
+        <item name="android:layout_marginStart">@dimen/s</item>
+        <item name="android:layout_marginLeft">@dimen/s</item>
+        <item name="android:layout_marginTop">@dimen/l</item>
     </style>
 
     <style name="buttonLogin">
         <item name="android:layout_marginTop">@dimen/s</item>
         <item name="android:layout_weight">0.5</item>
         <item name="backgroundTint">@color/purple3</item>
-        <item name="cornerRadius">20dp</item>
+        <item name="cornerRadius">@dimen/xl</item>
+    </style>
+
+    <style name="buttonConvert">
+        <item name="android:layout_marginTop">@dimen/s</item>
+        <item name="android:layout_weight">0.5</item>
+        <item name="backgroundTint">@color/purple3</item>
+        <item name="cornerRadius">@dimen/xl</item>
+    </style>
+
+    <style name="text_array_coins">
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:layout_marginLeft">@dimen/xl</item>
+        <item name="android:paddingStart">@dimen/m</item>
+        <item name="android:paddingLeft">@dimen/m</item>
+        <item name="android:textSize">@dimen/text20</item>
+        <item name="android:layout_marginStart">@dimen/xl</item>
+    </style>
+
+    <style name="bitcoinImage" parent="imageRecycler">
+        <item name="android:layout_marginStart">@dimen/l</item>
+        <item name="android:layout_marginLeft">@dimen/l</item>
+        <item name="android:layout_marginTop">@dimen/dimens36</item>
+    </style>
+
+    <style name="currensyImage" parent="imageRecycler">
+        <item name="android:layout_marginStart">@dimen/l</item>
+        <item name="android:layout_marginLeft">@dimen/l</item>
+        <item name="android:layout_marginTop">@dimen/l</item>
+    </style>
+
+    <style name="coinEditText">
+        <item name="android:layout_marginStart">@dimen/xxl</item>
+        <item name="android:layout_marginLeft">@dimen/xxl</item>
+        <item name="android:ems">10</item>
+        <item name="android:inputType">text|number</item>
+    </style>
+
+    <style name="textFragmentConverter">
+        <item name="android:textSize">@dimen/converttext</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="buttonConvertFragmentInformation">
+        <item name="android:layout_gravity">end</item>
+        <item name="android:layout_marginEnd">@dimen/l</item>
+        <item name="android:layout_marginTop">@dimen/l</item>
+        <item name="android:background">@drawable/cheked_button</item>
+        <item name="android:layout_marginRight">@dimen/l</item>
+    </style>
+
+    <style name="constrRecuclerBitInform">
+        <item name="android:layout_marginStart">@dimen/xs</item>
+        <item name="android:layout_marginLeft">@dimen/xs</item>
+        <item name="android:layout_marginTop">@dimen/l</item>
+        <item name="android:layout_marginEnd">@dimen/xs</item>
+        <item name="android:layout_marginRight">@dimen/xs</item>
+        <item name="android:layout_marginBottom">@dimen/l</item>
+        <item name="android:background">@drawable/oval_bagraund</item>
     </style>
 </resources>
