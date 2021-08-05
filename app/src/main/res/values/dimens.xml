@@ -18,5 +18,5 @@
     <dimen name="dimens40">40dp</dimen>
     <dimen name="dimens60">60dp</dimen>
     <dimen name="dimens80">80dp</dimen>
-    <dimen name="converttext">24sp</dimen>
+    <dimen name="converttext">16sp</dimen>
 </resources>

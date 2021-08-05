@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/converterFragment"
+        android:icon="@drawable/converter"
+        android:title="@string/converter" />
+
+    <item
+        android:id="@+id/optionsFragment"
+        android:icon="@drawable/ic_baseline_dehaze_24"
+        android:title="@string/options"/>
+
+    <item
+        android:id="@+id/informationFragment"
+        android:icon="@drawable/ic_baseline_info_24"
+        android:title="@string/information"/>
+
+    <item
+        android:id="@+id/favoriteFragment"
+        android:icon="@drawable/ic_baseline_favorite_24"
+        android:title="@string/favorite"/>
+
+</menu>

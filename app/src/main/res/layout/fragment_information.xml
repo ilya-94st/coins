@@ -7,7 +7,32 @@
     android:layout_height="match_parent"
     tools:context=".ui.information.InformationFragment">
 
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="30dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@+id/button_retry"
+        app:layout_constraintStart_toStartOf="@+id/button_retry"
+        app:layout_constraintTop_toBottomOf="@+id/button_retry"
+        tools:visibility="visible" />
 
+    <Button
+        android:id="@+id/button_retry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="@string/retry"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.401"
+        tools:visibility="visible" />
 
 
     <androidx.appcompat.widget.Toolbar
@@ -27,17 +52,41 @@
             app:srcCompat="@drawable/ic_baseline_exit_to_app_24"
             tools:ignore="VectorDrawableCompat" />
 
-        <ImageButton
-            android:id="@+id/buttonConvert"
+        <EditText
+            android:id="@+id/searchView"
+            android:visibility="invisible"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:srcCompat="@drawable/ic_baseline_dehaze_24"
+            android:gravity="center"
+            android:background="@drawable/oval_bagraund"
+            android:layout_marginTop="26dp"
+            android:layout_marginLeft="20dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:layout_marginStart="40dp" />
+
+        <ImageButton
+            android:id="@+id/buttonSearch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_baseline_search_24"
             tools:ignore="VectorDrawableCompat"
             style="@style/buttonConvertFragmentInformation" />
 
     </androidx.appcompat.widget.Toolbar>
 
-
+    <TextView
+        android:id="@+id/text_view_error"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="@string/can_not_load_result"
+        android:textColor="@color/black"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/button_retry"
+        app:layout_constraintEnd_toEndOf="@+id/button_retry"
+        app:layout_constraintStart_toStartOf="@+id/button_retry"
+        tools:visibility="visible" />
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:id="@+id/swipe"
@@ -52,49 +101,13 @@
             android:id="@+id/recyclerCoin"
             android:layout_width="match_parent"
             android:layout_height="0dp"
+            android:paddingBottom="60dp"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:listitem="@layout/recycler_bitcoin_information" />
-
-        <ProgressBar
-            android:id="@+id/progress_bar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:visibility="gone"
-            app:layout_constraintEnd_toEndOf="@+id/button_retry"
-            app:layout_constraintStart_toStartOf="@+id/button_retry"
-            app:layout_constraintTop_toBottomOf="@+id/button_retry"
-            tools:visibility="visible" />
-
-        <TextView
-            android:id="@+id/text_view_error"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/can_not_load_result"
-            app:layout_constraintBottom_toTopOf="@+id/button_retry"
-            app:layout_constraintEnd_toEndOf="@+id/button_retry"
-            app:layout_constraintStart_toStartOf="@+id/button_retry"
-            tools:visibility="visible" />
-
-        <Button
-            android:id="@+id/button_retry"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:text="@string/retry"
-            android:visibility="gone"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.401"
-            tools:visibility="visible" />
-
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

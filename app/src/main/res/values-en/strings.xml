@@ -11,4 +11,9 @@
     <string name="dolor">$</string>
     <string name="can_not_load_result">results could not be loaded</string>
     <string name="retry">repeat</string>
+    <string name="totalCost">cost per</string>
+    <string name="converter">converter</string>
+    <string name="options">options</string>
+    <string name="information">информация</string>
+    <string name="favorite">favorite</string>
 </resources>

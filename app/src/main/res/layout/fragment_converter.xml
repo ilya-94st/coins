@@ -13,17 +13,6 @@
     android:layout_height="match_parent"
     tools:context="com.example.staselovich_p4.ui.converter.ConverterFragment">
 
-    <Button
-        android:id="@+id/buttonconvert"
-        style="@style/buttonConvert"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/xxl"
-        android:text="@string/convert"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/currensyImage" />
-
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/bitcoinImage"
         style="@style/bitcoinImage"
@@ -36,6 +25,7 @@
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/currensyImage"
         style="@style/currensyImage"
+
         android:layout_width="@dimen/dimens60"
         android:layout_height="@dimen/dimens60"
         app:bindPhoto="@{coins.toCurrency.id ?? @drawable/currensy}"
@@ -56,8 +46,8 @@
         android:id="@+id/textConvert"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/xxl"
-        android:layout_marginLeft="@dimen/xxl"
+        android:layout_marginStart="@dimen/l"
+        android:layout_marginLeft="@dimen/l"
         app:layout_constraintBottom_toBottomOf="@+id/currensyImage"
         app:layout_constraintStart_toEndOf="@+id/currensyImage"
         app:layout_constraintTop_toTopOf="@+id/currensyImage"
@@ -70,7 +60,6 @@
         android:layout_marginStart="@dimen/s"
         android:layout_marginLeft="@dimen/s"
         style="@style/textFragmentConverter"
-        app:textRetrodaction2="@{coins.fromCurrency.quote.USD.price}"
         app:layout_constraintBottom_toBottomOf="@+id/coinEditext"
         app:layout_constraintStart_toEndOf="@+id/coinEditext"
         app:layout_constraintTop_toTopOf="@+id/coinEditext"
@@ -100,14 +89,36 @@
 
     <TextView
         android:id="@+id/textView8"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/xs"
         android:layout_marginLeft="@dimen/xs"
         android:text="@string/dolor"
         app:layout_constraintBottom_toBottomOf="@+id/allCounDollars"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/allCounDollars"
         app:layout_constraintTop_toTopOf="@+id/allCounDollars" />
+
+    <TextView
+        android:id="@+id/textTotalCost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/totalCost"
+        app:layout_constraintStart_toStartOf="@+id/textDollors"
+        app:layout_constraintTop_toBottomOf="@+id/textDollors" />
+
+    <TextView
+        android:id="@+id/totalCost"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:text="1"
+        app:layout_constraintBottom_toBottomOf="@+id/textTotalCost"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textTotalCost"
+        app:layout_constraintTop_toTopOf="@+id/textTotalCost" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

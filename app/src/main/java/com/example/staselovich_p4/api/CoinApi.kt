@@ -18,6 +18,7 @@ interface CoinApi {
         @Query("start") start: Int = 1,
         @Query("convert") convert: String = "USD"
     ) : CoinResponse
+
 }
 
 

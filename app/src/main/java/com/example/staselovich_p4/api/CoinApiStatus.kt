@@ -13,4 +13,7 @@ data class CoinApiStatus(
         val timestamp: String,
         val total_count: Int
     )
+
+
+
 }

@@ -8,11 +8,12 @@ import android.widget.AdapterView
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.example.staselovich_p4.dataBase.CoinEntity
 import com.example.staselovich_p4.databinding.RecyclerBitcoinInformationBinding
 import com.example.staselovich_p4.model.CoinModel
 import com.squareup.picasso.Picasso
 
-class CoinAdapter(): PagingDataAdapter<CoinModel, CoinAdapter.PagingViewHolder>(
+class CoinAdapter( private val listener: OnItemClick): PagingDataAdapter<CoinModel, CoinAdapter.PagingViewHolder>(
     PHOTO_COMPARATOR) {
     inner class PagingViewHolder(private val binding: RecyclerBitcoinInformationBinding): RecyclerView.ViewHolder(binding.root){
 
@@ -34,7 +35,17 @@ class CoinAdapter(): PagingDataAdapter<CoinModel, CoinAdapter.PagingViewHolder>(
             } else {
                 binding.textView7.setTextColor(Color.RED)
             }
+            binding.imagefavorite.setOnClickListener {
+                val coinPosition = bindingAdapterPosition
+                if (coinPosition != RecyclerView.NO_POSITION) {
+                    val item = getItem(coinPosition)
+                    if (item != null) {
+                        listener.onItemClick(item)
+                    }
+                }
+            }
         }
+
     }
 
     companion object{
@@ -48,6 +59,11 @@ class CoinAdapter(): PagingDataAdapter<CoinModel, CoinAdapter.PagingViewHolder>(
 
         }
     }
+
+    interface OnItemClick {
+        fun onItemClick(coin: CoinModel)
+    }
+
 
     override fun onBindViewHolder(holder: PagingViewHolder, position: Int) {
         val currentItem = getItem(position)

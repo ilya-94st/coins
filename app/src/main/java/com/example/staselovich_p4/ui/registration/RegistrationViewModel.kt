@@ -35,9 +35,5 @@ class RegistrationViewModel @ViewModelInject constructor() : ViewModel() {
             Log.d("Error", e.toString())
         }
     }
-    fun firebaseAuthWithGoogle(idToken: String, auth: FirebaseAuth) {
-        val credential = GoogleAuthProvider.getCredential(idToken, null)
-        auth.signInWithCredential(credential)
-    }
 
 }

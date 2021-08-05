@@ -1,27 +1,35 @@
-package com.example.staselovich_p4.model
+package com.example.staselovich_p4.api
 
 import android.util.Log
 import androidx.paging.PagingSource
 import com.example.staselovich_p4.api.CoinApi
+import com.example.staselovich_p4.model.CoinModel
 import retrofit2.HttpException
 import java.io.IOException
 
 private const val COIN_STARTING_PAGE_INDEX = 1
+
 class CoinPagingSource(
-    private val coinApi: CoinApi,
+    private val coinApi: CoinApi, private val query: String
 ) : PagingSource<Int, CoinModel>() {
 
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, CoinModel> {
-        val position = params.key ?: COIN_STARTING_PAGE_INDEX
+        val limit = 5000
+        val start = params.key ?: COIN_STARTING_PAGE_INDEX
+
 
         return try {
-            val response = coinApi.getAllCoins()
+
+            val response = coinApi.getAllCoins(limit, start)
             val result = response.data
+                .filter {
+                    it.name.lowercase().contains(query.lowercase())
+                }
 
             LoadResult.Page(
                 data = result,
-                prevKey = if (position == COIN_STARTING_PAGE_INDEX) null else position - 1,
-                nextKey = if (result.isEmpty()) null else position + 1,
+                prevKey = null,
+                nextKey = if (result.isEmpty()) null else start + 100,
             )
         } catch (e: IOException) {
             LoadResult.Error(e)

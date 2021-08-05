@@ -10,4 +10,9 @@
     <string name="dolor">$</string>
     <string name="can_not_load_result">Результаты не могут быть загружены</string>
     <string name="retry">повторить</string>
+    <string name="totalCost">Стоимость за</string>
+    <string name="converter">конвертер</string>
+    <string name="options">опции</string>
+    <string name="information">информация</string>
+    <string name="favorite">избраное</string>
 </resources>

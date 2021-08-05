@@ -25,6 +25,7 @@ class LoadFragment: BaseFragment<FragmentLoadBinding>() {
             getActivity()?.runOnUiThread {
                Navigation.findNavController(requireView())
                    .navigate(R.id.action_loadFragment_to_registrationFragment)
+
             }
         }
     }

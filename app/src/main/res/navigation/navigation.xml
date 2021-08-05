@@ -66,9 +66,20 @@
             android:id="@+id/action_arrayCoinsFragment_to_converterFragment"
             app:destination="@id/converterFragment"
             app:popUpTo="@id/arrayCoinsFragment"
-            app:popUpToInclusive="true"></action>
+            app:popUpToInclusive="true">
+        </action>
         <argument
             android:name="first"
             app:argType="boolean" />
     </fragment>
+    <fragment
+        android:id="@+id/optionsFragment"
+        android:name="com.example.staselovich_p4.ui.options.OptionsFragment"
+        android:label="fragment_options"
+        tools:layout="@layout/fragment_options" />
+    <fragment
+        android:id="@+id/favoriteFragment"
+        android:name="com.example.staselovich_p4.ui.favorites.FavoriteFragment"
+        android:label="fragment_favorite"
+        tools:layout="@layout/fragment_favorite" />
 </navigation>

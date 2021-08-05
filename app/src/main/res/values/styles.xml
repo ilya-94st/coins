@@ -71,12 +71,12 @@
     <style name="currensyImage" parent="imageRecycler">
         <item name="android:layout_marginStart">@dimen/l</item>
         <item name="android:layout_marginLeft">@dimen/l</item>
-        <item name="android:layout_marginTop">@dimen/l</item>
+        <item name="android:layout_marginTop">@dimen/dimens36</item>
     </style>
 
     <style name="coinEditText">
-        <item name="android:layout_marginStart">@dimen/xxl</item>
-        <item name="android:layout_marginLeft">@dimen/xxl</item>
+        <item name="android:layout_marginStart">@dimen/l</item>
+        <item name="android:layout_marginLeft">@dimen/l</item>
         <item name="android:ems">10</item>
         <item name="android:inputType">text|number</item>
     </style>
@@ -102,5 +102,11 @@
         <item name="android:layout_marginRight">@dimen/xs</item>
         <item name="android:layout_marginBottom">@dimen/l</item>
         <item name="android:background">@drawable/oval_bagraund</item>
+    </style>
+
+    <style name="toolbar_details">
+        <item name="android:background">@color/white</item>
+        <item name="android:minHeight">?attr/actionBarSize</item>
+        <item name="android:theme">?attr/actionBarTheme</item>
     </style>
 </resources>

@@ -12,6 +12,7 @@ import com.example.staselovich_p4.adapter.CoinSpinnerAdapter
 import com.example.staselovich_p4.databinding.FragmentArrayCoinsBinding
 import com.example.staselovich_p4.model.CoinModel
 import com.example.staselovich_p4.ui.converter.ConverterViewModel
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import dagger.hilt.android.AndroidEntryPoint
 
 
@@ -29,6 +30,7 @@ class ArrayCoinsFragment : Fragment(R.layout.fragment_array_coins), CoinSpinnerA
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         _binding = FragmentArrayCoinsBinding.bind(view)
+        requireActivity().findViewById<BottomNavigationView>(R.id.bottomNavigationView).visibility = View.INVISIBLE
         binding.recyclerCoin.setHasFixedSize(true)
         adapter = CoinSpinnerAdapter(this)
         binding.recyclerCoin.adapter = adapter
@@ -47,5 +49,10 @@ class ArrayCoinsFragment : Fragment(R.layout.fragment_array_coins), CoinSpinnerA
         }
         val action = ArrayCoinsFragmentDirections.actionArrayCoinsFragmentToConverterFragment()
         findNavController().navigate(action)
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        requireActivity().findViewById<BottomNavigationView>(R.id.bottomNavigationView).visibility = View.VISIBLE
     }
 }

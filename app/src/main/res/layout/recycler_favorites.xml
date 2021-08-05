@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="coinDatabase"
+            type="com.example.staselovich_p4.dataBase.CoinEntity" />
+    </data>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/constrRecuclerBitInform"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/bitcoinImage"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            app:loadImage="@{coinDatabase.id}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:src="@drawable/crypt"
+            style="@style/imageRecycler" />
+
+        <TextView
+            android:id="@+id/textName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:text="@{coinDatabase.name}"
+            app:layout_constraintBottom_toBottomOf="@+id/textSymbol"
+            app:layout_constraintStart_toEndOf="@+id/textSymbol"
+            app:layout_constraintTop_toTopOf="@+id/textSymbol" />
+
+        <TextView
+            android:id="@+id/textSymbol"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:text="@{coinDatabase.symbol}"
+            app:layout_constraintBottom_toBottomOf="@+id/bitcoinImage"
+            app:layout_constraintStart_toEndOf="@+id/bitcoinImage"
+            app:layout_constraintTop_toTopOf="@+id/bitcoinImage" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
