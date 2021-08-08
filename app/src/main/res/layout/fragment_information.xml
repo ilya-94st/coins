@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="@dimen/dimens36"
         android:visibility="gone"
         app:layout_constraintEnd_toEndOf="@+id/button_retry"
         app:layout_constraintStart_toStartOf="@+id/button_retry"
@@ -59,11 +59,11 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:background="@drawable/oval_bagraund"
-            android:layout_marginTop="26dp"
-            android:layout_marginLeft="20dp"
+            android:layout_marginTop="@dimen/xxl"
+            android:layout_marginLeft="@dimen/xl"
             android:ems="10"
             android:inputType="textPersonName"
-            android:layout_marginStart="40dp" />
+            android:layout_marginStart="@dimen/dimens40" />
 
         <ImageButton
             android:id="@+id/buttonSearch"
@@ -79,7 +79,7 @@
         android:id="@+id/text_view_error"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="@dimen/s"
         android:text="@string/can_not_load_result"
         android:textColor="@color/black"
         android:visibility="gone"
@@ -101,7 +101,7 @@
             android:id="@+id/recyclerCoin"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:paddingBottom="60dp"
+            android:paddingBottom="@dimen/dimens60"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

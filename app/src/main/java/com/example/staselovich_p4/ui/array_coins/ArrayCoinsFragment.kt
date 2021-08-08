@@ -8,7 +8,7 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.staselovich_p4.R
-import com.example.staselovich_p4.adapter.CoinSpinnerAdapter
+import com.example.staselovich_p4.ui.converter.CoinConverterAdapter
 import com.example.staselovich_p4.databinding.FragmentArrayCoinsBinding
 import com.example.staselovich_p4.model.CoinModel
 import com.example.staselovich_p4.ui.converter.ConverterViewModel
@@ -17,12 +17,12 @@ import dagger.hilt.android.AndroidEntryPoint
 
 
 @AndroidEntryPoint
-class ArrayCoinsFragment : Fragment(R.layout.fragment_array_coins), CoinSpinnerAdapter.OnItemClickListener {
+class ArrayCoinsFragment : Fragment(R.layout.fragment_array_coins), CoinConverterAdapter.OnItemClickListener {
     private var _binding: FragmentArrayCoinsBinding? = null
     private val binding get() = _binding!!
     private val viewModel by viewModels<ArrayCoinsViewModel>()
     private val shared by activityViewModels<ConverterViewModel>()
-    private lateinit var adapter: CoinSpinnerAdapter
+    private lateinit var adapter: CoinConverterAdapter
     private val args by navArgs<ArrayCoinsFragmentArgs>()
 
     private var first: Boolean = true
@@ -32,7 +32,7 @@ class ArrayCoinsFragment : Fragment(R.layout.fragment_array_coins), CoinSpinnerA
         _binding = FragmentArrayCoinsBinding.bind(view)
         requireActivity().findViewById<BottomNavigationView>(R.id.bottomNavigationView).visibility = View.INVISIBLE
         binding.recyclerCoin.setHasFixedSize(true)
-        adapter = CoinSpinnerAdapter(this)
+        adapter = CoinConverterAdapter(this)
         binding.recyclerCoin.adapter = adapter
         viewModel.allCoins.observe(viewLifecycleOwner) {
             adapter.submitData(viewLifecycleOwner.lifecycle,it)

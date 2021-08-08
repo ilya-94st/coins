@@ -32,8 +32,6 @@ task clean(type: Delete) {
 
 // Define versions in a single place
 ext {
-
-
     // App dependencies
     appCompatVersion = '1.2.0'
     constraintLayoutVersion = '1.1.3'

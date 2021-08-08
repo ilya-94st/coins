@@ -109,4 +109,16 @@
         <item name="android:minHeight">?attr/actionBarSize</item>
         <item name="android:theme">?attr/actionBarTheme</item>
     </style>
+
+    <style name="favoriteImage">
+        <item name="android:layout_marginTop">@dimen/xs</item>
+        <item name="android:layout_marginEnd">@dimen/s</item>
+        <item name="android:layout_marginRight">@dimen/s</item>
+        <item name="android:background">@drawable/cheked_button</item>
+    </style>
+
+    <style name="textNameBitcoin">
+        <item name="android:layout_marginStart">@dimen/l</item>
+        <item name="android:layout_marginLeft">@dimen/l</item>
+    </style>
 </resources>

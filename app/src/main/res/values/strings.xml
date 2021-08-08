@@ -1,4 +1,8 @@
 <resources>
+    <string-array name="languages">
+        <item>Русский</item>
+        <item>English</item>
+    </string-array>
     <string name="app_name">Staselovich_P4</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -15,4 +19,7 @@
     <string name="options">опции</string>
     <string name="information">информация</string>
     <string name="favorite">избраное</string>
+    <string name="change">применить</string>
+    <string name="_1">1</string>
+    <string name="saveMe">запомнить меня</string>
 </resources>

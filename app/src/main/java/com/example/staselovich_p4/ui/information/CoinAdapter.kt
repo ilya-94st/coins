@@ -1,40 +1,21 @@
-package com.example.staselovich_p4.adapter
+package com.example.staselovich_p4.ui.information
 
 import android.annotation.SuppressLint
-import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.AdapterView
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.example.staselovich_p4.dataBase.CoinEntity
 import com.example.staselovich_p4.databinding.RecyclerBitcoinInformationBinding
 import com.example.staselovich_p4.model.CoinModel
-import com.squareup.picasso.Picasso
 
 class CoinAdapter( private val listener: OnItemClick): PagingDataAdapter<CoinModel, CoinAdapter.PagingViewHolder>(
-    PHOTO_COMPARATOR) {
+    COIN_COMPARATOR
+) {
     inner class PagingViewHolder(private val binding: RecyclerBitcoinInformationBinding): RecyclerView.ViewHolder(binding.root){
-
         @SuppressLint("SetTextI18n")
         fun bind(coin: CoinModel) {
             binding.bitcoin = coin
-            if(coin.quote?.USD?.percent_change_1h.toString()> 0.toString()){
-                binding.textHour.setTextColor(Color.GREEN)
-            } else {
-                binding.textHour.setTextColor(Color.RED)
-            }
-            if (coin.quote?.USD?.percent_change_24h.toString()>0.toString()){
-                binding.text24.setTextColor(Color.GREEN)
-            } else {
-                binding.text24.setTextColor(Color.RED)
-            }
-            if (coin.quote?.USD?.percent_change_7d.toString()>0.toString()){
-                binding.textView7.setTextColor(Color.GREEN)
-            } else {
-                binding.textView7.setTextColor(Color.RED)
-            }
             binding.imagefavorite.setOnClickListener {
                 val coinPosition = bindingAdapterPosition
                 if (coinPosition != RecyclerView.NO_POSITION) {
@@ -45,11 +26,9 @@ class CoinAdapter( private val listener: OnItemClick): PagingDataAdapter<CoinMod
                 }
             }
         }
-
     }
-
     companion object{
-        private val PHOTO_COMPARATOR = object : DiffUtil.ItemCallback<CoinModel>(){
+        private val COIN_COMPARATOR = object : DiffUtil.ItemCallback<CoinModel>(){
             override fun areItemsTheSame(oldItem: CoinModel, newItem: CoinModel) =
                 oldItem.id == newItem.id
             override fun areContentsTheSame(
@@ -59,11 +38,9 @@ class CoinAdapter( private val listener: OnItemClick): PagingDataAdapter<CoinMod
 
         }
     }
-
     interface OnItemClick {
         fun onItemClick(coin: CoinModel)
     }
-
 
     override fun onBindViewHolder(holder: PagingViewHolder, position: Int) {
         val currentItem = getItem(position)
@@ -71,7 +48,6 @@ class CoinAdapter( private val listener: OnItemClick): PagingDataAdapter<CoinMod
             holder.bind(currentItem)
         }
     }
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PagingViewHolder {
         val binding = RecyclerBitcoinInformationBinding.inflate(LayoutInflater.from(parent.context),parent,false)
         return PagingViewHolder(binding)

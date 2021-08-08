@@ -1,6 +1,5 @@
 package com.example.staselovich_p4.api
 
-import com.example.staselovich_p4.model.CoinModel
 import retrofit2.http.GET
 import retrofit2.http.Headers
 import retrofit2.http.Query

@@ -5,7 +5,6 @@ import androidx.fragment.app.Fragment
 import android.view.View
 import androidx.fragment.app.viewModels
 import com.example.staselovich_p4.R
-import com.example.staselovich_p4.adapter.FavoriteAdapter
 import com.example.staselovich_p4.databinding.FragmentFavoriteBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import dagger.hilt.android.AndroidEntryPoint

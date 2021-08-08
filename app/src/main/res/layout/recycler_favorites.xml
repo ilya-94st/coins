@@ -34,19 +34,17 @@
             android:id="@+id/textName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginLeft="16dp"
             android:text="@{coinDatabase.name}"
             app:layout_constraintBottom_toBottomOf="@+id/textSymbol"
             app:layout_constraintStart_toEndOf="@+id/textSymbol"
-            app:layout_constraintTop_toTopOf="@+id/textSymbol" />
+            app:layout_constraintTop_toTopOf="@+id/textSymbol"
+            style="@style/textNameBitcoin" />
 
         <TextView
             android:id="@+id/textSymbol"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginLeft="16dp"
+            style="@style/textNameBitcoin"
             android:text="@{coinDatabase.symbol}"
             app:layout_constraintBottom_toBottomOf="@+id/bitcoinImage"
             app:layout_constraintStart_toEndOf="@+id/bitcoinImage"

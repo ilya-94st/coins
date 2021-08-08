@@ -1,8 +1,6 @@
 package com.example.staselovich_p4.api
 
-import android.util.Log
 import androidx.paging.PagingSource
-import com.example.staselovich_p4.api.CoinApi
 import com.example.staselovich_p4.model.CoinModel
 import retrofit2.HttpException
 import java.io.IOException

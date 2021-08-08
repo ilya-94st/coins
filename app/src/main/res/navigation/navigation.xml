@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/loadFragment"
-        android:name="com.example.staselovich_p4.LoadFragment"
+        android:name="com.example.staselovich_p4.ui.load.LoadFragment"
         android:label="fragment_load"
         tools:layout="@layout/fragment_load" >
         <action
@@ -73,13 +73,13 @@
             app:argType="boolean" />
     </fragment>
     <fragment
-        android:id="@+id/optionsFragment"
-        android:name="com.example.staselovich_p4.ui.options.OptionsFragment"
-        android:label="fragment_options"
-        tools:layout="@layout/fragment_options" />
-    <fragment
         android:id="@+id/favoriteFragment"
         android:name="com.example.staselovich_p4.ui.favorites.FavoriteFragment"
         android:label="fragment_favorite"
         tools:layout="@layout/fragment_favorite" />
+    <fragment
+        android:id="@+id/optionFragment"
+        android:name="com.example.staselovich_p4.ui.options.OptionFragment"
+        android:label="fragment_option"
+        tools:layout="@layout/fragment_option" />
 </navigation>

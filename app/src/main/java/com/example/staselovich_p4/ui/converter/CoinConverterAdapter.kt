@@ -1,4 +1,4 @@
-package com.example.staselovich_p4.adapter
+package com.example.staselovich_p4.ui.converter
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
@@ -9,8 +9,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.staselovich_p4.databinding.ArrayCoinsBinding
 import com.example.staselovich_p4.model.CoinModel
 
-class CoinSpinnerAdapter(private val listener: OnItemClickListener): PagingDataAdapter<CoinModel, CoinSpinnerAdapter.PagingViewHolder>(
-    PHOTO_COMPARATOR) {
+class CoinConverterAdapter(private val listener: OnItemClickListener): PagingDataAdapter<CoinModel, CoinConverterAdapter.PagingViewHolder>(
+    COIN_COMPARATOR
+) {
     inner class PagingViewHolder(private val binding: ArrayCoinsBinding): RecyclerView.ViewHolder(binding.root){
         init {
             binding.root.setOnClickListener {
@@ -35,7 +36,7 @@ class CoinSpinnerAdapter(private val listener: OnItemClickListener): PagingDataA
     }
 
     companion object{
-        private val PHOTO_COMPARATOR = object : DiffUtil.ItemCallback<CoinModel>(){
+        private val COIN_COMPARATOR = object : DiffUtil.ItemCallback<CoinModel>(){
             override fun areItemsTheSame(oldItem: CoinModel, newItem: CoinModel) =
                 oldItem.id == newItem.id
             override fun areContentsTheSame(

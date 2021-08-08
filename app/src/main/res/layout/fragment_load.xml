@@ -9,7 +9,7 @@
         android:layout_height="match_parent"
         android:background="@color/purple"
         app:layoutDescription="@xml/fragment_load_xml_constraintlayout2_scene"
-        tools:context=".LoadFragment">
+        tools:context=".ui.load.LoadFragment">
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/bitcoinImage"

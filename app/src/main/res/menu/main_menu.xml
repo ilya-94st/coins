@@ -6,7 +6,8 @@
         android:title="@string/converter" />
 
     <item
-        android:id="@+id/optionsFragment"
+
+        android:id="@+id/optionFragment"
         android:icon="@drawable/ic_baseline_dehaze_24"
         android:title="@string/options"/>
 

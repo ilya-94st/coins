@@ -1,4 +1,4 @@
-package com.example.staselovich_p4
+package com.example.staselovich_p4.ui.main_activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -7,6 +7,7 @@ import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.setupWithNavController
+import com.example.staselovich_p4.R
 import com.example.staselovich_p4.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
 

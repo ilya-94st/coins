@@ -9,14 +9,12 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.view.View
 import android.view.inputmethod.InputMethodManager
-import android.widget.Toast
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.paging.LoadState
 import com.example.staselovich_p4.R
-import com.example.staselovich_p4.adapter.CoinAdapter
 import com.example.staselovich_p4.adapter.CoinLoadAdapter
 import com.example.staselovich_p4.dataBase.CoinEntity
 import com.example.staselovich_p4.databinding.FragmentInformationBinding
@@ -139,8 +137,5 @@ class InformationFragment : Fragment(R.layout.fragment_information), CoinAdapter
 
     override fun onItemClick(coin: CoinModel) {
         coin.id?.let { CoinEntity(it, coin.name, coin.symbol) }?.let { viewModel.insert(it) }
-        Toast.makeText(context, "Добавлен в Избранное", Toast.LENGTH_SHORT).show()
     }
-
-
 }

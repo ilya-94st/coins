@@ -29,17 +29,14 @@
             android:id="@+id/imagefavorite"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp"
-            android:background="@drawable/cheked_button"
             app:layout_constraintBottom_toBottomOf="@+id/textView7"
             app:layout_constraintEnd_toStartOf="@+id/currency"
             app:layout_constraintStart_toEndOf="@+id/textBitcoin"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0"
             app:srcCompat="@drawable/ic_baseline_favorite_24"
-            tools:ignore="VectorDrawableCompat" />
+            tools:ignore="VectorDrawableCompat"
+            style="@style/favoriteImage" />
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/bitcoinImage"
@@ -106,6 +103,7 @@
             android:id="@+id/textView7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            app:colorChoise="@{bitcoin.quote.USD.percent_change_7d}"
             app:textRetrodaction="@{bitcoin.quote.USD.percent_change_7d}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/count"
@@ -116,6 +114,7 @@
             android:id="@+id/text24"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            app:colorChoise="@{bitcoin.quote.USD.percent_change_24h}"
             android:layout_marginTop="@dimen/l"
             app:textRetrodaction="@{bitcoin.quote.USD.percent_change_24h}"
             app:layout_constraintStart_toStartOf="@+id/textBitcoin"
@@ -124,6 +123,7 @@
         <TextView
             android:id="@+id/textHour"
             style="@style/hour"
+            app:colorChoise="@{bitcoin.quote.USD.percent_change_1h}"
             android:text="@{String.valueOf(bitcoin.quote.USD.percent_change_1h)}"
             android:layout_width="@dimen/m"
             android:layout_height="@dimen/l"

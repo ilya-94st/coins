@@ -18,14 +18,15 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
 import kotlinx.coroutines.*
 
-const val RC_SIGN_IN = 0
+
+
 class RegistrationFragment : BaseFragment<FragmentRegistrationBinding>(){
     private lateinit var mGoogleSignInClient: GoogleSignInClient
     private lateinit var auth: FirebaseAuth
     private val viewModel : RegistrationViewModel by viewModels()
     lateinit var shared: SharedPreferences
     private var isremembered: Boolean = false
-
+    private val RC_SIGN_IN = 0
 
     override fun getBinding() = R.layout.fragment_registration
     @DelicateCoroutinesApi
@@ -42,6 +43,10 @@ class RegistrationFragment : BaseFragment<FragmentRegistrationBinding>(){
         binding.signInButton.setOnClickListener {
             signIn()
         }
+        binding.button2.setOnClickListener {
+            Navigation.findNavController(requireView())
+                .navigate(R.id.action_registrationFragment_to_informationFragment)
+        }
     }
     @DelicateCoroutinesApi
     private fun animation() {
@@ -52,9 +57,11 @@ class RegistrationFragment : BaseFragment<FragmentRegistrationBinding>(){
         binding.signInButton.startAnimation(fallinAnimationButton)
         binding.checkBox.startAnimation(slow)
         binding.checkBox.visibility = View.VISIBLE
+        binding.saveMe.startAnimation(slow)
+        binding.saveMe.visibility = View.VISIBLE
     }
     private fun signIn() {
-        val signInIntent = mGoogleSignInClient.signInIntent;
+        val signInIntent = mGoogleSignInClient.signInIntent
         startActivityForResult(signInIntent,RC_SIGN_IN)
     }
     override fun onStart() {

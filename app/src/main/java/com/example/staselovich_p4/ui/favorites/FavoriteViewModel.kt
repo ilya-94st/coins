@@ -2,10 +2,8 @@ package com.example.staselovich_p4.ui.favorites
 
 import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.*
-import androidx.paging.cachedIn
 import com.example.staselovich_p4.dataBase.CoinEntity
 import com.example.staselovich_p4.repository.CoinDatabaseRepository
-import com.example.staselovich_p4.repository.CoinRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 

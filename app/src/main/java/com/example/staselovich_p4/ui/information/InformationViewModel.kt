@@ -15,26 +15,16 @@ import kotlinx.coroutines.launch
 class InformationViewModel @ViewModelInject constructor(private val repository: CoinRepository,
 private val dbrepository : CoinDatabaseRepository) :
     ViewModel() {
-
-
     fun insert(entity:CoinEntity) {
             viewModelScope.launch {
                 dbrepository.insert(entity)
             }
     }
-
     private var coins = MutableLiveData("")
     var allCoins = coins.switchMap { repository.getAllCoins(it).cachedIn(viewModelScope) }
-
-    fun refresh() {
-        coins.value = "${coins.value}"
-    }
-
     fun searchCoins(query: String) {
         viewModelScope.launch {
             coins.value = query
         }
     }
-
-
 }

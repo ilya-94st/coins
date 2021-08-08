@@ -9,7 +9,6 @@ import android.text.TextWatcher
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
-import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
@@ -86,13 +85,13 @@ class ConverterFragment : Fragment(R.layout.fragment_converter) {
         }
     }
 
-    fun toArraysCoinFragment(chooser: Boolean) {
+    private fun toArraysCoinFragment(chooser: Boolean) {
         val action =
             ConverterFragmentDirections.actionConverterFragmentToArrayCoinsFragment(chooser)
         findNavController().navigate(action)
     }
 
-    fun examinationIsEmptyPrise() {
+    private fun examinationIsEmptyPrise() {
         binding.textDollors.text =
             viewModel.fromCurrency?.quote?.USD?.price?.let { viewModel.fromCoin(it) }
         if (viewModel.fromCurrency?.quote?.USD?.price == null) {
@@ -105,17 +104,21 @@ class ConverterFragment : Fragment(R.layout.fragment_converter) {
     }
 
     fun examinationIsEmpty(): Boolean {
-        if (binding.coinEditext.text.isNullOrEmpty()) {
-            Toast.makeText(context, "введите число", Toast.LENGTH_SHORT).show()
-            return false
-        } else if (viewModel.toCurrency?.quote?.USD?.price == null) {
-            Toast.makeText(context, "выбирите валюту 2", Toast.LENGTH_SHORT).show()
-            return false
-        } else if (viewModel.fromCurrency?.quote?.USD?.price == null) {
-            Toast.makeText(context, "выбирите валюту 1", Toast.LENGTH_SHORT).show()
-            return false
+        return when {
+            binding.coinEditext.text.isNullOrEmpty() -> {
+                Toast.makeText(context, "введите число", Toast.LENGTH_SHORT).show()
+                false
+            }
+            viewModel.toCurrency?.quote?.USD?.price == null -> {
+                Toast.makeText(context, "выбирите валюту 2", Toast.LENGTH_SHORT).show()
+                false
+            }
+            viewModel.fromCurrency?.quote?.USD?.price == null -> {
+                Toast.makeText(context, "выбирите валюту 1", Toast.LENGTH_SHORT).show()
+                false
+            }
+            else -> true
         }
-        return true
     }
 
     fun View.hideKeyboard() {
