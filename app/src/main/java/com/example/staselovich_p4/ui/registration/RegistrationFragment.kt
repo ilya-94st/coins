@@ -43,10 +43,6 @@ class RegistrationFragment : BaseFragment<FragmentRegistrationBinding>(){
         binding.signInButton.setOnClickListener {
             signIn()
         }
-        binding.button2.setOnClickListener {
-            Navigation.findNavController(requireView())
-                .navigate(R.id.action_registrationFragment_to_informationFragment)
-        }
     }
     @DelicateCoroutinesApi
     private fun animation() {
