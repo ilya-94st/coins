@@ -123,8 +123,7 @@ class InformationFragment : Fragment(R.layout.fragment_information), CoinAdapter
             FirebaseAuth.getInstance().signOut()
             val googleSignInClient = GoogleSignIn.getClient(requireContext(), gso)
             googleSignInClient.signOut()
-            val action = InformationFragmentDirections.actionInformationFragmentToRegistrationFragment()
-            findNavController().navigate(action)
+            findNavController().navigateUp()
         }
     }
     fun View.hideKeyboard() {
