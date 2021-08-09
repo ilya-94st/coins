@@ -29,6 +29,11 @@
         <action
             android:id="@+id/action_informationFragment_to_converterFragment2"
             app:destination="@id/converterFragment" />
+        <action
+            android:id="@+id/action_informationFragment_to_optionFragment"
+            app:destination="@id/optionFragment"
+            app:popUpTo="@id/informationFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/registrationFragment"
@@ -81,5 +86,11 @@
         android:id="@+id/optionFragment"
         android:name="com.example.staselovich_p4.ui.options.OptionFragment"
         android:label="fragment_option"
-        tools:layout="@layout/fragment_option" />
+        tools:layout="@layout/fragment_option" >
+        <action
+            android:id="@+id/action_optionFragment_to_informationFragment"
+            app:destination="@id/informationFragment"
+            app:popUpTo="@id/optionFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
 </navigation>
